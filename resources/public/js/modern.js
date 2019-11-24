@@ -50065,7 +50065,7 @@ modern_cljs.login.init = function modern_cljs$login$init() {
     return null;
   }
 };
-window.onload = modern_cljs.login.init;
+goog.exportSymbol("modern_cljs.login.init", modern_cljs.login.init);
 goog.provide("goog.net.WebSocket");
 goog.provide("goog.net.WebSocket.ErrorEvent");
 goog.provide("goog.net.WebSocket.EventType");
@@ -56154,7 +56154,7 @@ modern_cljs.shopping.init = function modern_cljs$shopping$init() {
     return null;
   }
 };
-window.onload = modern_cljs.shopping.init;
+goog.exportSymbol("modern_cljs.shopping.init", modern_cljs.shopping.init);
 goog.provide("clojure.browser.repl");
 goog.require("cljs.core");
 goog.require("goog.dom");
