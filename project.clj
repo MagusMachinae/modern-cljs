@@ -6,10 +6,13 @@
 
   ;;Source code paths
   :source-paths ["src/clj" "src/cljs"]
-  :dependencies [[org.clojure/clojure "1.10.0"]
-                 [org.clojure/clojurescript "1.10.597"]]
-  :plugins [[lein-cljsbuild "1.1.7"]]
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/clojurescript "1.10.597"]
+                 [compojure "1.6.1"]]
+  :plugins [[lein-cljsbuild "1.1.7"]
+            [lein-ring "0.12.5"]]
 
+  :ring {:handler modern-cljs.core/handler}
 ;;cljsbuild options config
   :cljsbuild {:builds
               [{;; CLJS source path
