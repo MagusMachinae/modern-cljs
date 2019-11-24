@@ -1,6 +1,10 @@
 # modern-cljs
 
-A Clojure library designed to ... well, that part is up to you.
+A collection of Clojurescript exercises and demonstrations.
+
+To run, ensure clojure and leiningen are installed.
+
+Navigate to \resources\public and start the server with `lein ring server
 
 ## Usage
 
