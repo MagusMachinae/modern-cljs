@@ -10,11 +10,13 @@
                  [org.clojure/clojurescript "1.10.597"]
                  [compojure "1.6.1"]
                  [domina "1.0.3"]
-                 [hiccups "0.3.0"]]
+                 [hiccups "0.3.0"]
+                 [org.clojars.magomimmo/shoreleave-remote-ring "0.3.3"]
+                 [org.clojars.magomimmo/shoreleave-remote "0.3.1"]]
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-ring "0.12.5"]]
 
-  :ring {:handler modern-cljs.core/handler}
+  :ring {:handler modern-cljs.remotes/app}
 ;;cljsbuild options config
   :cljsbuild {:builds
               {:dev
