@@ -9,7 +9,8 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.597"]
                  [compojure "1.6.1"]
-                 [domina "1.0.3"]]
+                 [domina "1.0.3"]
+                 [hiccups "0.3.0"]]
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-ring "0.12.5"]]
 
