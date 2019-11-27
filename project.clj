@@ -14,7 +14,8 @@
                  [org.clojars.magomimmo/shoreleave-remote-ring "0.3.3"]
                  [org.clojars.magomimmo/shoreleave-remote "0.3.1"]]
   :plugins [[lein-cljsbuild "1.1.7"]
-            [lein-ring "0.12.5"]]
+            [lein-ring "0.12.5"]
+            [lein-clean-m2 "0.1.2"]]
 
   :ring {:handler modern-cljs.remotes/app}
 ;;cljsbuild options config

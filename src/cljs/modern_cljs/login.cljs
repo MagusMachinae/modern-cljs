@@ -4,23 +4,23 @@
             [domina.events :as ev]
             [hiccups.runtime]))
 
-(def ^:dynamic *password-re* #"^(?=.*\d).{4,8}$")
-
-(def ^:dynamic *email-re* #"^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9]+)*(\.[a-z]{2,4})$")
-
 (defn validate-email [email]
   (dom/destroy! (dom/by-class "email"))
-  (if (not (re-matches *email-re* (dom/value email)))
+  (if (not (re-matches (re-pattern (dom/attr email :pattern))
+                       (dom/value email)))
     (do
-      (dom/prepend! (dom/by-id "loginForm") (hiccs/html [:div.help "Invalid E-mail"]))
+      (dom/prepend! (dom/by-id "loginForm")
+                    (hiccs/html [:div.help.email (dom/attr email :title)]))
       false)
     true))
 
 (defn validate-password [password]
   (dom/destroy! (dom/by-class "password"))
-  (if (not (re-matches *password-re* (dom/value password)))
+  (if (not (re-matches (re-pattern (dom/attr password :pattern))
+                       (dom/value password)))
     (do
-      (dom/append! (dom/by-id "loginForm") (hiccs/html [:div.help "Invalid Password"]))
+      (dom/append! (dom/by-id "loginForm")
+                   (hiccs/html [:div.help.password (dom/attr password :title)]))
       false)
     true))
 
@@ -36,7 +36,8 @@
       (do
         (dom/destroy! (dom/by-class "help"))
         (ev/prevent-default evt)
-        (dom/append! (dom/by-id "loginForm") (hiccs/html [:div.help "Please complete the Form."])))
+        (dom/append! (dom/by-id "loginForm")
+                     (hiccs/html [:div.help "Please complete the Form."])))
       (if (and (validate-email email)
                (validate-password password))
         true
