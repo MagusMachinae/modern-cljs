@@ -5,14 +5,16 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
 
   ;;Source code paths
-  :source-paths ["src/clj" "src/cljs"]
+  :source-paths ["src/clj" "src/cljs" "src/cljc"]
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.597"]
                  [compojure "1.6.1"]
                  [domina "1.0.3"]
                  [hiccups "0.3.0"]
                  [org.clojars.magomimmo/shoreleave-remote-ring "0.3.3"]
-                 [org.clojars.magomimmo/shoreleave-remote "0.3.1"]]
+                 [org.clojars.magomimmo/shoreleave-remote "0.3.1"]
+                 [org.clojars.magomimmo/valip "0.4.0-SNAPSHOT"]
+                 [proto-repl "0.3.1"]]
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-ring "0.12.5"]
             [lein-clean-m2 "0.1.2"]]
@@ -22,7 +24,7 @@
   :cljsbuild {:builds
               {:dev
                {;; CLJS source path
-                :source-paths ["src/brepl" "src/cljs"]
+                :source-paths ["src/brepl" "src/cljs" "src/cljc"]
                 ;;Closure compiler config
                 :compiler {;; CLS generated JS script filename
                            :output-to "resources/public/js/modern_dbg.js"
