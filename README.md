@@ -1,10 +1,12 @@
 # modern-cljs
 
-A collection of Clojurescript exercises and demonstrations.
+A collection of completed Clojurescript exercises and demonstration pages. Techniques covered include AJAX abstraction layers, responsive web design, .cljc cross-compilation, and DOM event manipulation.
 
 To run, ensure clojure and leiningen are installed.
 
-Navigate to \resources\public and start the server with `lein ring server
+To compile from source, call `lein cljsbuild once <build>`, supplying build version as an optional argument. Otherwise, compiles all builds.
+
+Navigate to \resources\public and start the server with `lein ring server`
 
 ## Usage
 
