@@ -8,8 +8,12 @@
 ;;The request map is passed to each function in turn until a non-nil response is returned.
 (defroutes app-routes
   ;to serve document root addr
-  (GET  "/"      [] "<p>Compojure online</p>")
-  (POST "/login" [email password] (l/authenticate-user email password))
+  (GET  "/" []
+        "<p>Compojure online</p>")
+  (POST "/login" [email password]
+        (l/authenticate-user email password))
+  (POST "/shopping" [quantity price tax discount]
+        (str "You entered: " quantity " " price " " tax " and " discount))
   ;serve static pages saved in resources/public
   (route/resources "/")
   (route/not-found "Page not found."))

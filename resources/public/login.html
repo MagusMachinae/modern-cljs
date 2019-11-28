@@ -10,7 +10,7 @@
 </head>
 <body>
   <!-- login.html -->
-  <form action="login" method="post" id="loginForm">
+  <form action="/login" method="POST" id="loginForm" novalidate>
     <fieldset>
       <legend>
         Login
@@ -24,15 +24,7 @@
                pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$"
                required>
       </div>
-<div>
-        <label for="email">Email Address</label>
-        <input type="email" name="email" id="email" required>
-      </div>
 
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" required>
-      </div>
       <div>
         <label for="password">Password</label>
         <input type="password" name="password" id="password"
