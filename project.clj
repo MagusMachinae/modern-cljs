@@ -14,12 +14,13 @@
                  [org.clojars.magomimmo/shoreleave-remote-ring "0.3.3"]
                  [org.clojars.magomimmo/shoreleave-remote "0.3.1"]
                  [org.clojars.magomimmo/valip "0.4.0-SNAPSHOT"]
-                 [proto-repl "0.3.1"]]
+                 [proto-repl "0.3.1"]
+                 [enlive "1.1.6"]]
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-ring "0.12.5"]
             [lein-clean-m2 "0.1.2"]]
 
-  :ring {:handler modern-cljs.remotes/app}
+  :ring {:handler modern-cljs.core/app}
 ;;cljsbuild options config
   :cljsbuild {:builds
               {:dev
@@ -33,7 +34,7 @@
                            :pretty-print true}}
                :pre-prod
                {;; CLJS source path
-                :source-paths ["src/brepl" "src/cljs"]
+                :source-paths ["src/brepl" "src/cljs" "src/cljc"]
                 ;;Closure compiler config
                 :compiler {;; CLS generated JS script filename
                            :output-to "resources/public/js/modern_pre.js"
@@ -42,7 +43,7 @@
                            :pretty-print false}}
                :prod
                {;; clojurescript source code path
-                :source-paths ["src/cljs"]
+                :source-paths ["src/cljs" "src/cljc"]
 
                 ;; Google Closure Compiler options
                 :compiler {;; the name of emitted JS script file
