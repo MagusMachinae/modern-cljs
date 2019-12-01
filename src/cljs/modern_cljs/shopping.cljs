@@ -18,7 +18,7 @@
 
 (defn add-help []
   (dom/append! (dom/by-id "shoppingForm")
-               (h/html [:div.help "Click to calculate"andler])))
+               (h/html [:div.help "Click to calculate"])))
 
 (defn remove-help []
   (dom/destroy! (dom/by-class "help")))
